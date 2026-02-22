@@ -39,7 +39,7 @@ body{
 
 .hero{
   height:60vh;
-  background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover;
+  background:url('https://www.zomato.com/gwalior/hemu-ji-chat-bhandar-madhav-ganj/menu') center/cover;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -126,3 +126,4 @@ body{
   font-size:30px;
   text-decoration:none;
 }
+
