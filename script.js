@@ -1,27 +1,32 @@
-function toggleTheme() {
-    document.body.classList.toggle("dark");
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+  localStorage.setItem("theme",
+    document.body.classList.contains("dark") ? "dark" : "light");
 }
 
-function showBranch(branch) {
-    let content = document.getElementById("content");
+window.onload = function(){
+  if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+  }
+}
 
-    if(branch === 1) {
-        content.innerHTML = `
-        <h2>Branch 1 Details</h2>
-        <p><b>Address:</b> Madhav Ganj Chauraha, Gwalior</p>
-        <p><b>Timing:</b> 12:00 PM – 11:00 PM</p>
-        <p><b>Contact:</b> +91 97531 30974</p>
-        <h3>Popular Items</h3>
-        <p>Aata Golgappe | Butter Paneer Cheela | Cheese Paneer Pizza</p>
-        `;
-    } else {
-        content.innerHTML = `
-        <h2>Branch 2 Details</h2>
-        <p><b>Address:</b> Nai Sadak, Patankar Bazar, Gwalior</p>
-        <p><b>Timing:</b> 2:00 PM – 10:30 PM</p>
-        <p><b>Contact:</b> +91 99266 47484</p>
-        <h3>Popular Items</h3>
-        <p>Karela Chaat | Paneer Cheela | Golgappe</p>
-        `;
-    }
+function showBranch(branch){
+  let menu = document.getElementById("menuSection");
+
+  if(branch === 1){
+    menu.innerHTML = `
+    <h2>Branch 1 Menu</h2>
+    <div class="menu-item">Aata Golgappe [20 Pieces]</div>
+    <div class="menu-item">Butter Paneer Cheela</div>
+    <div class="menu-item">Cheese Paneer Pizza</div>
+    <div class="menu-item">Veg Cheese Maggi</div>
+    `;
+  } else {
+    menu.innerHTML = `
+    <h2>Branch 2 Menu</h2>
+    <div class="menu-item">Aata Golgappe [20 Pieces]</div>
+    <div class="menu-item">Karela Chaat</div>
+    <div class="menu-item">Paneer Cheela</div>
+    `;
+  }
 }
