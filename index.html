@@ -1,49 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Hemu Ji Chilla Chat Bhandar</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hemu Ji Chilla & Chat</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="logo">Hemu Ji</div>
-  <div class="nav-right">
-    <button onclick="toggleTheme()" class="theme-btn">🌙</button>
-  </div>
-</nav>
+<header class="navbar glass">
+    <h2 class="logo">Hemu Ji</h2>
+
+    <div class="nav-right">
+        <select id="branchSelect">
+            <option value="chilla">Chilla Branch</option>
+            <option value="chat">Chat Branch</option>
+        </select>
+
+        <button id="themeToggle">🌙</button>
+    </div>
+</header>
 
 <section class="hero">
-  <div class="hero-content glass">
-    <h1>Hemu Ji Chilla Chat Bhandar</h1>
-    <p>Serving the authentic taste of Gwalior for 33+ years</p>
-    <div class="rating-badge">⭐ 4.2 | Premium Street Food</div>
-    <div class="branch-buttons">
-      <button onclick="showBranch(1)">Madhav Ganj</button>
-      <button onclick="showBranch(2)">Nai Sadak</button>
+    <div class="hero-content glass">
+        <h1 id="branchTitle">Hemu Ji Chilla</h1>
+        <p>Serving Gwalior Since 33 Years ❤️</p>
+        <button onclick="scrollToMenu()">View Menu</button>
     </div>
-  </div>
 </section>
 
-<section class="menu-section">
-  <div class="sidebar glass">
-    <h3>Categories</h3>
-    <ul>
-      <li onclick="filterCategory('chaat')">Chaat</li>
-      <li onclick="filterCategory('pizza')">Pizza</li>
-      <li onclick="filterCategory('cheela')">Cheela</li>
-      <li onclick="filterCategory('maggi')">Maggi</li>
-    </ul>
-  </div>
-
-  <div class="menu-container" id="menuContainer">
-    <!-- Items dynamically inserted -->
-  </div>
+<section id="menu" class="menu-section">
+    <h2>Our Special Menu</h2>
+    <div class="menu-container" id="menuContainer">
+        <!-- JS will inject items -->
+    </div>
 </section>
 
-<a href="https://wa.me/919999999999" class="whatsapp-btn">🟢</a>
+<footer>
+    <p>© 2026 Hemu Ji Street Food | Made with ❤️ in Gwalior</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
