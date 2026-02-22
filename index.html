@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hemu Ji Chilla & Chat</title>
+    <meta charset="UTF-8">
+    <title>Hemu Ji Chilla Chat Bhandar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar glass">
-    <h2 class="logo">Hemu Ji</h2>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Hemu Ji Chilla Chat</div>
 
-    <div class="nav-right">
-        <select id="branchSelect">
-            <option value="chilla">Chilla Branch</option>
-            <option value="chat">Chat Branch</option>
-        </select>
+        <div class="nav-controls">
+            <select id="branchSelect">
+                <option value="branch1">Madhav Ganj Branch</option>
+                <option value="branch2">Nai Sadak Branch</option>
+            </select>
 
-        <button id="themeToggle">🌙</button>
-    </div>
-</header>
+            <button id="themeToggle">🌙</button>
+        </div>
+    </header>
 
-<section class="hero">
-    <div class="hero-content glass">
-        <h1 id="branchTitle">Hemu Ji Chilla</h1>
-        <p>Serving Gwalior Since 33 Years ❤️</p>
-        <button onclick="scrollToMenu()">View Menu</button>
-    </div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 id="branchTitle">Hemu Ji Chilla Chat Bhandar</h1>
+            <p>Serving the authentic taste of Gwalior since 33+ years ❤️</p>
+            <button id="viewMenuBtn">View Menu</button>
+        </div>
+    </section>
 
-<section id="menu" class="menu-section">
-    <h2>Our Special Menu</h2>
-    <div class="menu-container" id="menuContainer">
-        <!-- JS will inject items -->
-    </div>
-</section>
+    <!-- MENU SECTION -->
+    <section id="menuSection">
+        <h2>Our Special Menu</h2>
+        <div id="menuContainer"></div>
+    </section>
 
-<footer>
-    <p>© 2026 Hemu Ji Street Food | Made with ❤️ in Gwalior</p>
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Hemu Ji Chilla Chat Bhandar | Made with ❤️ in Gwalior</p>
+    </footer>
 
-<script src="script.js"></script>
+    <!-- JS FILE -->
+    <script src="script.js" defer></script>
+
 </body>
 </html>
