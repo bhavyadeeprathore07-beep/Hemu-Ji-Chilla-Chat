@@ -3,40 +3,47 @@
 <head>
   <title>Hemu Ji Chilla Chat Bhandar</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <nav class="navbar">
-  <h2>Hemu Ji</h2>
-  <div>
-    <button onclick="toggleTheme()">🌙</button>
+  <div class="logo">Hemu Ji</div>
+  <div class="nav-right">
+    <button onclick="toggleTheme()" class="theme-btn">🌙</button>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-overlay">
+  <div class="hero-content glass">
     <h1>Hemu Ji Chilla Chat Bhandar</h1>
     <p>Serving the authentic taste of Gwalior for 33+ years</p>
-    <div class="rating">⭐ 4.2 Rating | Street Food Premium</div>
+    <div class="rating-badge">⭐ 5 | Premium Street Food</div>
+    <div class="branch-buttons">
+      <button onclick="showBranch(1)">Madhav Ganj</button>
+      <button onclick="showBranch(2)">Nai Sadak</button>
+    </div>
   </div>
 </section>
 
-<section class="branch-section">
-  <div class="branch-card" onclick="showBranch(1)">
-    <h3>Branch 1</h3>
-    <p>Madhav Ganj Chauraha</p>
+<section class="menu-section">
+  <div class="sidebar glass">
+    <h3>Categories</h3>
+    <ul>
+      <li onclick="filterCategory('chaat')">Chaat</li>
+      <li onclick="filterCategory('pizza')">Pizza</li>
+      <li onclick="filterCategory('cheela')">Cheela</li>
+      <li onclick="filterCategory('maggi')">Maggi</li>
+    </ul>
   </div>
 
-  <div class="branch-card" onclick="showBranch(2)">
-    <h3>Branch 2</h3>
-    <p>Nai Sadak, Patankar Bazar</p>
+  <div class="menu-container" id="menuContainer">
+    <!-- Items dynamically inserted -->
   </div>
 </section>
 
-<section id="menuSection"></section>
-
-<a href="https://wa.me/919999999999" class="whatsapp">🟢</a>
+<a href="https://wa.me/919926647484" class="whatsapp-btn">🟢</a>
 
 <script src="script.js"></script>
 </body>
