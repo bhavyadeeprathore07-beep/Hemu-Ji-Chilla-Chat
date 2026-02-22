@@ -8,25 +8,23 @@
 
 <header>
     <h1>Hemu Ji Chilla Chat Bhandar</h1>
-    <p>Welcome to the Taste of Gwalior</p>
+    <p>Serving the authentic taste of Gwalior for over 33 years</p>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Toggle Theme</button>
 </header>
 
-<div class="branch-buttons">
-    <button onclick="showBranch(1)">Branch 1</button>
-    <button onclick="showBranch(2)">Branch 2</button>
-    <button onclick="showLogin()">Admin Login</button>
+<div class="branch-container">
+    <div class="card" onclick="showBranch(1)">
+        <h2>Branch 1</h2>
+        <p>Madhav Ganj Chauraha</p>
+    </div>
+
+    <div class="card" onclick="showBranch(2)">
+        <h2>Branch 2</h2>
+        <p>Nai Sadak, Patankar Bazar</p>
+    </div>
 </div>
 
 <div id="content"></div>
-
-<!-- Login Modal -->
-<div id="loginBox" class="login-box">
-    <h2>Admin Login</h2>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p id="loginMessage"></p>
-</div>
 
 <script src="script.js"></script>
 </body>
