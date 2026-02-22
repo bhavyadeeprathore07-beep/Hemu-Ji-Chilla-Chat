@@ -1,0 +1,39 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #fff8f0;
+    text-align: center;
+}
+
+header {
+    background: #ff5722;
+    color: white;
+    padding: 20px;
+}
+
+.branch-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.branch-buttons button:hover {
+    background: #e65100;
+}
+
+#content {
+    padding: 20px;
+}
+
+.login-box {
+    display: none;
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0px 0px 10px gray;
+}
