@@ -1,46 +1,50 @@
-let items = [
-  {name:"Aata Golgappe [20 Pieces]",category:"chaat"},
-  {name:"Butter Paneer Cheela",category:"cheela"},
-  {name:"Cheese Paneer Pizza",category:"pizza"},
-  {name:"Veg Cheese Maggi",category:"maggi"},
-  {name:"Karela Chaat",category:"chaat"},
-  {name:"Paneer Cheela",category:"cheela"}
-];
+const branchSelect = document.getElementById("branchSelect");
+const branchTitle = document.getElementById("branchTitle");
+const menuContainer = document.getElementById("menuContainer");
+const themeToggle = document.getElementById("themeToggle");
 
-function toggleTheme(){
-  document.body.classList.toggle("dark");
-  localStorage.setItem("theme",
-    document.body.classList.contains("dark")?"dark":"light");
+const data = {
+    chilla: {
+        title: "Hemu Ji Chilla",
+        items: ["Paneer Chilla", "Masala Chilla", "Cheese Chilla", "Butter Chilla"]
+    },
+    chat: {
+        title: "Hemu Ji Chat Bhandar",
+        items: ["Gol Gappe", "Aloo Tikki", "Papdi Chat", "Sev Puri"]
+    }
+};
+
+function loadBranch(branch) {
+    branchTitle.innerText = data[branch].title;
+    menuContainer.innerHTML = "";
+
+    data[branch].items.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("menu-card", "glass");
+        card.innerHTML = `
+            <h3>${item}</h3>
+            <p>Delicious street style special</p>
+        `;
+        menuContainer.appendChild(card);
+    });
 }
 
-window.onload=function(){
-  if(localStorage.getItem("theme")==="dark"){
-    document.body.classList.add("dark");
-  }
-  displayItems(items);
+branchSelect.addEventListener("change", () => {
+    loadBranch(branchSelect.value);
+});
+
+function scrollToMenu() {
+    document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
 }
 
-function displayItems(list){
-  let container=document.getElementById("menuContainer");
-  container.innerHTML="";
-  list.forEach(item=>{
-    container.innerHTML+=`
-      <div class="menu-card glass">
-        <h4>${item.name}</h4>
-      </div>
-    `;
-  });
-}
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
 
-function filterCategory(cat){
-  let filtered=items.filter(i=>i.category===cat);
-  displayItems(filtered);
-}
+    if(document.body.classList.contains("dark")){
+        themeToggle.innerText = "☀️";
+    } else {
+        themeToggle.innerText = "🌙";
+    }
+});
 
-function showBranch(branch){
-  if(branch===1){
-    alert("Showing Madhav Ganj Branch Menu");
-  }else{
-    alert("Showing Nai Sadak Branch Menu");
-  }
-}
+loadBranch("chilla");
