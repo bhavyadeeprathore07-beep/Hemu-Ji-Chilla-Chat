@@ -13,45 +13,55 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-   <header class="navbar">
-    <h2 class="brand">Hemu Ji Chilla Chat</h2>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>Hemu Ji Chilla Chat</h2>
+        </div>
 
-    <div class="nav-right">
-        <select id="branchSelect">
-            <option>Madhav Ganj Branch</option>
-            <option>Nai Sadak Branch</option>
-        </select>
+        <div class="nav-controls">
+            <select id="branchSelect">
+                <option value="madhav">Madhav Ganj Branch</option>
+                <option value="nai">Nai Sadak Branch</option>
+            </select>
 
-        <button id="themeToggle">🌙</button>
-    </div>
-</header>
+            <button id="themeToggle">🌙</button>
+        </div>
+    </header>
 
-    <!-- HERO SECTION -->
-   <section class="hero">
-    <div class="hero-content">
-        <h1>Hemu Ji Chilla</h1>
-        <p>Serving the authentic taste of Gwalior since 33+ years ❤️</p>
-        <button class="btn">View Menu</button>
-    </div>
-</section>
 
-    <!-- MENU SECTION -->
-    <section id="menuSection">
-        <h2>Our Special Menu</h2>
-        <div id="menuContainer"></div>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+        <div class="hero-box">
+            <h1>Hemu Ji Chilla</h1>
+            <p>Serving the authentic taste of Gwalior since 33+ years ❤️</p>
+
+            <button 
+                class="primary-btn"
+                onclick="document.getElementById('menuSection').scrollIntoView({behavior:'smooth'})">
+                View Menu
+            </button>
+        </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
+
+    <!-- ================= MENU SECTION ================= -->
+    <section id="menuSection" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Our Special Menu</h2>
+            <div id="menuContainer"></div>
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
         <p>© 2026 Hemu Ji Chilla Chat Bhandar | Made with ❤️ in Gwalior</p>
     </footer>
 
-    <!-- JS FILE -->
+
+    <!-- ================= JAVASCRIPT ================= -->
     <script src="script.js" defer></script>
 
 </body>
 </html>
-
-
-
