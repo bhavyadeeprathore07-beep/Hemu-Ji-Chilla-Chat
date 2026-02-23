@@ -107,3 +107,43 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+.menu-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-img {
+    height: 180px;
+    background: url("https://images.unsplash.com/photo-1604908176997-431bde4cde58") center/cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.rating {
+    background: #e23744;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.price {
+    color: #333;
+}
