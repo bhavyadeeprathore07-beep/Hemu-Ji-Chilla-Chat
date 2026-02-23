@@ -26,21 +26,20 @@ section {
 
 /* Glass Card */
 .menu-card {
-    backdrop-filter: blur(15px);
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: 25px;
-    width: 260px;
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    border: 2px solid #eee;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
     cursor: pointer;
-    transition: 0.4s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-6px);
+    border-color: #e23744;
+    box-shadow: 0 12px 30px rgba(226,55,68,0.15);
 }
-
 /* Food Name */
 .menu-card h3 {
     margin: 0 0 10px;
@@ -58,35 +57,39 @@ section {
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.6);
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 0.3s ease;
 }
 
 .modal-content {
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 20px;
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    width: 380px;
     text-align: center;
-    width: 350px;
-    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    animation: scaleIn 0.3s ease;
 }
 
-.modal-content button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #e23744;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
 }
 
-.modal-content button:hover {
-    background: #ff4d5a;
+@keyframes scaleIn {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content h3 {
+    color: #e23744;
 }
 
 .hero {
@@ -154,4 +157,13 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #f8f8f8;
     color: #222;
+}
+
+.category-title {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 34px;
+    font-weight: 600;
+    border-left: 6px solid #e23744;
+    padding-left: 15px;
 }
