@@ -20,11 +20,20 @@ function loadBranch(branch) {
 
     data[branch].items.forEach(item => {
         const card = document.createElement("div");
-        card.classList.add("menu-card", "glass");
+        card.classList.add("menu-card");
+
         card.innerHTML = `
-            <h3>${item}</h3>
-            <p>Delicious street style special</p>
+            <div class="card-img"></div>
+            <div class="card-content">
+                <h3>${item}</h3>
+                <p>Delicious street style special</p>
+                <div class="card-footer">
+                    <span class="rating">⭐ 4.5</span>
+                    <span class="price">₹120</span>
+                </div>
+            </div>
         `;
+
         menuContainer.appendChild(card);
     });
 }
@@ -48,3 +57,4 @@ themeToggle.addEventListener("click", () => {
 });
 
 loadBranch("chilla");
+
