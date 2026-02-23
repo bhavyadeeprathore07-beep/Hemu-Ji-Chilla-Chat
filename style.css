@@ -88,3 +88,47 @@ section {
 .modal-content button:hover {
     background: #ff4d5a;
 }
+
+.hero {
+    height: 90vh;
+    background: url("images/shop.jpg") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
+    background: rgba(255, 255, 255, 0.6); /* Light overlay */
+    backdrop-filter: blur(8px);
+    padding: 60px 80px;
+    border-radius: 20px;
+}
+
+.hero-content {
+    text-align: center;
+    color: #222;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #e23744;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #ff4d5a;
+}
