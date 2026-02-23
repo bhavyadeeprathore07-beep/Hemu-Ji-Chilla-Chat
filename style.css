@@ -167,3 +167,53 @@ body {
     border-left: 6px solid #e23744;
     padding-left: 15px;
 }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #FFF8E1;
+    color: #2E2E2E;
+    transition: 0.3s ease;
+}
+
+.navbar {
+    background: #C62828;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 8%;
+    align-items: center;
+}
+
+.brand {
+    margin: 0;
+    font-weight: 600;
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-right select {
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+}
+
+#themeToggle {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #1E1E1E;
+    color: white;
+}
+.dark-mode .navbar {
+    background: #111;
+}
