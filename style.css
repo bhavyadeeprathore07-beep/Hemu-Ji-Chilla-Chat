@@ -132,3 +132,19 @@ section {
 .btn:hover {
     background: #ff4d5a;
 }
+
+section {
+    padding: 80px 10%;
+}
+
+#menuContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.category-title {
+    grid-column: 1 / -1;
+    font-size: 32px;
+    margin-top: 60px;
+}
