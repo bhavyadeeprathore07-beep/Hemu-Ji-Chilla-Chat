@@ -217,3 +217,18 @@ body {
 .dark-mode .navbar {
     background: #111;
 }
+
+.hero {
+    height: 85vh;
+    background: url("https://images.unsplash.com/photo-1601050690597-df0568f70950") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    background: rgba(255,255,255,0.85);
+    padding: 50px 80px;
+    border-radius: 20px;
+    text-align: center;
+}
