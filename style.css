@@ -1,47 +1,90 @@
-.category-title {
-    margin-top: 40px;
-    font-size: 26px;
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+    color: white;
 }
 
+/* Section spacing */
+section {
+    padding: 60px 8%;
+}
+
+/* Category Title */
+.category-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Card Grid */
+#menuContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Glass Card */
 .menu-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin: 15px;
-    display: inline-block;
-    width: 220px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 25px;
+    width: 260px;
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px) scale(1.03);
+    background: rgba(255, 255, 255, 0.15);
 }
 
+/* Food Name */
+.menu-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+/* Price */
+.menu-card p {
+    margin: 0;
+    color: #ffb347;
+    font-weight: 600;
+}
+
+/* Modal */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
     text-align: center;
-    width: 300px;
+    width: 350px;
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 .modal-content button {
-    margin-top: 15px;
-    padding: 8px 15px;
-    border: none;
+    margin-top: 20px;
+    padding: 10px 20px;
     background: #e23744;
+    border: none;
+    border-radius: 8px;
     color: white;
-    border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    background: #ff4d5a;
 }
