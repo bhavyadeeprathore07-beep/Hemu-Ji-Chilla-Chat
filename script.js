@@ -11,11 +11,26 @@ document.addEventListener("DOMContentLoaded", function () {
   {
     category: "Gol Gappe",
     items: [
-      { name: "Aata Golgappe", price: 50, desc: "6 pieces crispy golgappe" },
-      { name: "Suji Golgappe", price: 50, desc: "6 pieces special suji golgappe" },
-      { name: "Jain Golgappe", price: 50, desc: "No onion garlic version" }
+        { name: "Aata Golgappe", price: 30, desc: "7 pieces crispy golgappe" },
+        { name: "Suji Golgappe", price: 30, desc: "7 pieces special suji golgappe" },
+        { name: "Jain Golgappe", price: 40, desc: "7 pieces no onion garlic" }
     ]
   },
+    {
+    category: "Papdi Chaat",
+    items: [
+        { name: "Sev Papdi Chaat", price: 40, desc: "Crispy papdi with chutney" },
+        { name: "Butter Papdi Chaat", price: 50, desc: "Butter loaded papdi" },
+        { name: "Dahi Papdi Chaat", price: 70, desc: "Dahi special papdi" }
+    ]
+},
+    {
+    category: "Karela Chaat",
+    items: [
+        { name: "Karela Chaat", price: 40, desc: "Unique karela chaat" },
+        { name: "Paneer Karela Chaat", price: 50, desc: "Paneer karela fusion" }
+    ]
+},
   {
     category: "Cheela",
     items: [
@@ -29,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { name: "Paneer Mushroom Masala Cheela", price: 90, desc: "Spicy mushroom masala" },
       { name: "Pasta Paneer Cheela", price: 90, desc: "Fusion style cheela" },
       { name: "Sweet Corn Masala Cheela", price: 90, desc: "Corn masala filling" }
+      { name: "Hemu Ji Special Cheela", price: 100, desc: "Chef special premium cheela" }
     ]
   },
   {
@@ -107,3 +123,4 @@ const toggleBtn = document.getElementById("themeToggle");
 toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 });
+
