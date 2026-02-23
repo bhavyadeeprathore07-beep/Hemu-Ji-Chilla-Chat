@@ -148,3 +148,10 @@ section {
     font-size: 32px;
     margin-top: 60px;
 }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f8f8f8;
+    color: #222;
+}
