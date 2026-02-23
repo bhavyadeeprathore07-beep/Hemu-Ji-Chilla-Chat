@@ -7,32 +7,40 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const menuData = [
-        {
-            category: "Gol Gappe",
-            items: [
-                { name: "Aata Golgappe", price: 50, desc: "6 Pieces crispy golgappe" },
-                { name: "Suji Golgappe", price: 50, desc: "6 Pieces special suji golgappe" },
-                { name: "Jain Golgappe", price: 50, desc: "No onion & garlic" }
-            ]
-        },
-        {
-            category: "Cheela",
-            items: [
-                { name: "Butter Cheela", price: 60, desc: "Classic butter cheela" },
-                { name: "Paneer Cheela", price: 70, desc: "Stuffed with paneer" },
-                { name: "Butter Paneer Masala Cheela", price: 90, desc: "Premium loaded cheela" }
-            ]
-        },
-        {
-            category: "Sev Puri Chaat",
-            items: [
-                { name: "Suji Sev Puri", price: 40, desc: "6 piece sev puri" },
-                { name: "Butter Sev Puri", price: 50, desc: "Butter topped sev puri" },
-                { name: "Paneer Sev Puri", price: 50, desc: "Paneer sev puri" }
-            ]
-        }
-    ];
+   const menuData = [
+  {
+    category: "Gol Gappe",
+    items: [
+      { name: "Aata Golgappe", price: 50, desc: "6 pieces crispy golgappe" },
+      { name: "Suji Golgappe", price: 50, desc: "6 pieces special suji golgappe" },
+      { name: "Jain Golgappe", price: 50, desc: "No onion garlic version" }
+    ]
+  },
+  {
+    category: "Cheela",
+    items: [
+      { name: "Butter Cheela", price: 60, desc: "Classic butter cheela" },
+      { name: "Butter Paneer Vegetable Cheela", price: 70, desc: "Paneer + veg loaded" },
+      { name: "Butter Paneer Jain Cheela", price: 70, desc: "Jain style cheela" },
+      { name: "Butter Paneer Cheese Mushroom Cheela", price: 80, desc: "Loaded mushroom cheese" },
+      { name: "Butter Paneer Tomato Onion Cheela", price: 80, desc: "Tomato onion masala" },
+      { name: "Butter Cheese Cheela", price: 70, desc: "Cheese stuffed cheela" },
+      { name: "Paneer Baby Corn Cheela", price: 90, desc: "Paneer + baby corn special" },
+      { name: "Paneer Mushroom Masala Cheela", price: 90, desc: "Spicy mushroom masala" },
+      { name: "Pasta Paneer Cheela", price: 90, desc: "Fusion style cheela" },
+      { name: "Sweet Corn Masala Cheela", price: 90, desc: "Corn masala filling" }
+    ]
+  },
+  {
+    category: "Sev Puri",
+    items: [
+      { name: "Suji Sev Puri", price: 40, desc: "6 pieces" },
+      { name: "Aata Sev Puri", price: 45, desc: "Healthy aata version" },
+      { name: "Butter Sev Puri", price: 50, desc: "Butter loaded" },
+      { name: "Paneer Sev Puri", price: 50, desc: "Paneer topping" }
+    ]
+  }
+];
 
     function loadMenu() {
         menuContainer.innerHTML = "";
@@ -93,3 +101,4 @@ document.addEventListener("DOMContentLoaded", function () {
     loadMenu();
 
 });
+
