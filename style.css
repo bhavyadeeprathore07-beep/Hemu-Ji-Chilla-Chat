@@ -46,7 +46,7 @@ section {
 
 .hero {
     height: 85vh;
-    background: url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d") center/cover no-repeat;
+    background: url("https://images.unsplash.com/photo-1596797038530-2c107229654b") center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,6 +196,7 @@ section {
     background: rgba(0,0,0,0.7);
     color: white;
 }
+
 
 
 
