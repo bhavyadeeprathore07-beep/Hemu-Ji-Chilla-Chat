@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    console.log("Page loaded successfully!");
+
     // ===== DOM ELEMENTS =====
     const menuContainer = document.getElementById("menuContainer");
     const toggleBtn = document.getElementById("themeToggle");
@@ -228,6 +230,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ===== LOAD MENU =====
     function loadMenu() {
+        console.log("Loading menu for branch:", currentBranch);
+        
         if (!menuContainer) {
             console.error("menuContainer not found in HTML");
             return;
@@ -235,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuContainer.innerHTML = "";
         const branchMenu = menuData[currentBranch] || menuData["madhav"];
+        console.log("Branch menu loaded:", branchMenu.length, "categories");
 
         branchMenu.forEach(section => {
             const filteredItems = section.items.filter(item => {
@@ -243,6 +248,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                      item.desc.toLowerCase().includes(searchQuery.toLowerCase());
                 return matchesCategory && matchesSearch;
             });
+
+            console.log("Category:", section.category, "Items:", filteredItems.length);
 
             if (filteredItems.length > 0) {
                 const categoryTitle = document.createElement("h2");
@@ -293,8 +300,3 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.innerHTML = `
             <div class="modal-content">
                 <h2>${item.name}</h2>
-                <p>${item.desc}</p>
-                <h3>Price: ₹ ${item.price}</h3>
-                <div class="modal-buttons">
-                    <button id="closeBtn">Close</button>
-                    <button id
