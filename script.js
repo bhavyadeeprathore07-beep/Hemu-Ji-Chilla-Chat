@@ -237,7 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const branchMenu = menuData[currentBranch] || menuData["madhav"];
 
         branchMenu.forEach(section => {
-            // Filter items based on category and search
             const filteredItems = section.items.filter(item => {
                 const matchesCategory = currentCategory === "all" || item.category === currentCategory;
                 const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -245,7 +244,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return matchesCategory && matchesSearch;
             });
 
-            // Only show category if there are items
             if (filteredItems.length > 0) {
                 const categoryTitle = document.createElement("h2");
                 categoryTitle.innerText = section.category;
@@ -259,7 +257,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Show message if no items found
         if (menuContainer.innerHTML.trim() === "") {
             menuContainer.innerHTML = `
                 <div style="text-align: center; padding: 50px; grid-column: 1 / -1;">
@@ -297,4 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="modal-content">
                 <h2>${item.name}</h2>
                 <p>${item.desc}</p>
-                <h3>Price: ₹ ${
+                <h3>Price: ₹ ${item.price}</h3>
+                <div class="modal-buttons">
+                    <button id="closeBtn">Close</button>
+                    <button id
