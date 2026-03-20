@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const menuContainer = document.getElementById("menuContainer");
     const toggleBtn = document.getElementById("themeToggle");
     const branchSelect = document.getElementById("branchSelect");
@@ -10,52 +9,52 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentCategory = "all";
     let searchQuery = "";
 
-    // ===== COMPLETE MENU =====
+    // ===== FULL MENU DATA =====
     const menuData = {
         madhav: [
             {
                 category: "Gol Gappe",
                 items: [
-                    { name: "Aata Golgappe", price: 30, desc: "7 pieces", rating: 4.5 },
-                    { name: "Suji Golgappe", price: 30, desc: "7 pieces", rating: 4.7 },
-                    { name: "Jain Golgappe", price: 40, desc: "7 pieces", rating: 4.8 },
-                    { name: "Aata Suji Golgappe", price: 30, desc: "7 pieces", rating: 4.6 }
+                    { name: "Aata Golgappe", price: 30, desc: "7 pieces" },
+                    { name: "Suji Golgappe", price: 30, desc: "7 pieces" },
+                    { name: "Jain Golgappe", price: 40, desc: "7 pieces" },
+                    { name: "Aata Suji Golgappe", price: 30, desc: "7 pieces" }
                 ]
             },
             {
-                category: "Sev Papdi Chaat",
+                category: "Papdi Chaat",
                 items: [
-                    { name: "Sev Papdi Chaat", price: 40, rating: 4.6 },
-                    { name: "Butter Sev Papdi", price: 50, rating: 4.8 },
-                    { name: "Paneer Sev Papdi", price: 50, rating: 4.8 },
-                    { name: "Dahi Papdi Chaat", price: 70, rating: 4.9 }
+                    { name: "Sev Papdi Chaat", price: 40 },
+                    { name: "Butter Sev Papdi", price: 50 },
+                    { name: "Paneer Sev Papdi", price: 50 },
+                    { name: "Dahi Papdi Chaat", price: 70 }
                 ]
             },
             {
-                category: "Karela",
+                category: "Karela Chaat",
                 items: [
-                    { name: "Karela Chaat", price: 40, rating: 4.5 },
-                    { name: "Paneer Karela Chaat", price: 50, rating: 4.7 }
+                    { name: "Karela Chaat", price: 40 },
+                    { name: "Paneer Karela Chaat", price: 50 }
                 ]
             },
             {
                 category: "Cheela",
                 items: [
-                    { name: "Butter Paneer Cheela", price: 60, rating: 4.6 },
-                    { name: "Butter Paneer Vegetable Cheela", price: 70, rating: 4.8 },
-                    { name: "Butter Paneer Jain Cheela", price: 70, rating: 4.7 },
-                    { name: "Butter Paneer Cheese Masala Cheela", price: 80, rating: 4.9 },
-                    { name: "Butter Paneer Tomato Onion Cheela", price: 80, rating: 4.6 },
-                    { name: "Butter Paper Cheela", price: 60, rating: 4.5 },
-                    { name: "Butter Paper Baby Cheela", price: 70, rating: 4.6 },
-                    { name: "Paneer Mushroom Masala Cheela", price: 90, rating: 4.9 },
-                    { name: "Pasta Paneer Cheela", price: 90, rating: 4.7 },
-                    { name: "Sweet Corn Masala Cheela", price: 90, rating: 4.6 },
-                    { name: "Hemu Ji Special Cheela", price: 100, rating: 5.0 }
+                    { name: "Butter Paneer Cheela", price: 60 },
+                    { name: "Butter Paneer Vegetable Cheela", price: 70 },
+                    { name: "Butter Paneer Jain Cheela", price: 70 },
+                    { name: "Butter Paneer Cheese Masala Cheela", price: 80 },
+                    { name: "Butter Paneer Tomato Onion Cheela", price: 80 },
+                    { name: "Butter Paper Cheela", price: 60 },
+                    { name: "Butter Paper Baby Cheela", price: 70 },
+                    { name: "Paneer Mushroom Masala Cheela", price: 90 },
+                    { name: "Pasta Paneer Cheela", price: 90 },
+                    { name: "Sweet Corn Masala Cheela", price: 90 },
+                    { name: "Hemu Ji Special Cheela", price: 100 }
                 ]
             },
             {
-                category: "Sev Puri Chaat",
+                category: "Sev Puri",
                 items: [
                     { name: "Suji Sev Puri", price: 40 },
                     { name: "Aata Sev Puri", price: 40 },
@@ -110,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 ]
             }
         ],
-
         nai: [
             {
                 category: "Gol Gappe",
@@ -133,65 +131,57 @@ document.addEventListener("DOMContentLoaded", function () {
         menuContainer.innerHTML = "";
 
         menuData[currentBranch].forEach(section => {
+            // Logic: Show section ONLY if category is "all" OR it matches the clicked button
+            const isCategoryMatch = currentCategory === "all" || section.category === currentCategory;
+            
+            if (!isCategoryMatch) return;
 
-            const filtered = section.items.filter(item => {
-                const matchCategory = currentCategory === "all" || section.category === currentCategory;
-                const matchSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchCategory && matchSearch;
-            });
+            // Search filter within that category
+            const filteredItems = section.items.filter(item => 
+                item.name.toLowerCase().includes(searchQuery.toLowerCase())
+            );
 
-            if (filtered.length === 0) return;
+            if (filteredItems.length === 0) return;
 
+            // Create Category Heading
             const title = document.createElement("h2");
             title.classList.add("category-title");
             title.innerText = section.category;
             menuContainer.appendChild(title);
 
-            filtered.forEach(item => {
+            // Create Cards (No Ratings)
+            filteredItems.forEach(item => {
                 const card = document.createElement("div");
                 card.classList.add("menu-card");
-
-                const stars = item.rating
-                    ? "⭐".repeat(Math.floor(item.rating))
-                    : "";
-
                 card.innerHTML = `
                     <h3>${item.name}</h3>
                     <p class="price">₹ ${item.price}</p>
                     <p class="desc">${item.desc || ""}</p>
-                    <div>${stars}</div>
                 `;
-
                 card.onclick = () => showModal(item);
-
                 menuContainer.appendChild(card);
             });
         });
     }
 
+    // Modal Logic
     function showModal(item) {
         const modal = document.createElement("div");
-        modal.classList.add("modal");
-
+        modal.className = "modal";
         modal.innerHTML = `
             <div class="modal-content">
                 <h2>${item.name}</h2>
-                <p>${item.desc || "Delicious item"}</p>
-                <h3>₹ ${item.price}</h3>
-                <button id="closeBtn">Close</button>
+                <p>${item.desc || "Serving authentic taste since 33+ years!"}</p>
+                <h3 style="color: var(--primary-color)">Price: ₹ ${item.price}</h3>
+                <button id="closeBtn" class="primary-btn" style="margin-top:20px">Close</button>
             </div>
         `;
-
         document.body.appendChild(modal);
-
         document.getElementById("closeBtn").onclick = () => modal.remove();
-
-        modal.onclick = (e) => {
-            if (e.target === modal) modal.remove();
-        };
+        modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
     }
 
-    // ===== EVENTS =====
+    // Event Listeners
     branchSelect.onchange = (e) => {
         currentBranch = e.target.value;
         loadMenu();
@@ -206,14 +196,20 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.onclick = () => {
             filterBtns.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
-            currentCategory = btn.dataset.category;
+            currentCategory = btn.getAttribute("data-category");
             loadMenu();
         };
     });
 
     toggleBtn.onclick = () => {
         document.body.classList.toggle("dark-mode");
+        toggleBtn.innerText = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
     };
 
     loadMenu();
 });
+
+// WhatsApp Function
+function orderOnWhatsApp() {
+    window.open("https://wa.me/919876543210?text=Hello%20Hemu%20Ji!%20I%20want%20to%20order...", "_blank");
+}
