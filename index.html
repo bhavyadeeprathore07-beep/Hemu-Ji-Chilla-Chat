@@ -1,143 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemu Ji Chilla Chat Bhandar</title>
 
-<title>Hemu Ji Chilla Chat Bhandar</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- SEO -->
-<meta name="description" content="Hemu Ji Chilla Chat Bhandar - Serving Gwalior since 33+ years">
-<meta name="keywords" content="chilla, chaat, golgappe, gwalior street food">
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <h2 class="logo">🔥 Hemu Ji Chilla Chat</h2>
 
-<h2 class="logo">🔥 Hemu Ji Chilla Chat</h2>
+        <div class="nav-controls">
+            <select id="branchSelect">
+                <option value="madhav">Madhav Ganj Branch</option>
+                <option value="nai">Nai Sadak Branch</option>
+            </select>
 
-<div class="nav-controls">
+            <button id="themeToggle">🌙</button>
+        </div>
+    </header>
 
-<select id="branchSelect">
-<option value="madhav">Madhav Ganj Branch</option>
-<option value="nai">Nai Sadak Branch</option>
-</select>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-box">
+            <h1>Hemu Ji Chilla Chat</h1>
+            <p>Serving authentic taste of Gwalior since 33+ years ❤️</p>
 
-<button id="themeToggle">🌙</button>
+            <div class="hero-stats">
+                <span>⭐ 4.8 Rating</span>
+                <span>🍽 50K+ Customers</span>
+                <span>🏆 2 Branches</span>
+            </div>
 
-</div>
+            <div>
+                <button class="primary-btn" onclick="scrollToMenu()">View Menu</button>
+                <button class="secondary-btn" onclick="orderOnWhatsApp()">Order Now</button>
+            </div>
+        </div>
+    </section>
 
-</header>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="🔍 Search food...">
+    </div>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
+    <!-- MENU -->
+    <section id="menuSection">
+        <h2 class="section-title">Our Menu</h2>
 
-<div class="hero-box">
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="Gol Gappe">Gol Gappe</button>
+            <button class="filter-btn" data-category="Cheela">Cheela</button>
+            <button class="filter-btn" data-category="Sev Puri Chaat">Sev Puri</button>
+            <button class="filter-btn" data-category="Sev Papdi Chaat">Sev Papdi</button>
+            <button class="filter-btn" data-category="Karela">Karela</button>
+            <button class="filter-btn" data-category="Pizza">Pizza</button>
+            <button class="filter-btn" data-category="Pasta">Pasta</button>
+            <button class="filter-btn" data-category="Sandwiches">Sandwiches</button>
+            <button class="filter-btn" data-category="Burgers">Burgers</button>
+            <button class="filter-btn" data-category="Maggi">Maggi</button>
+            <button class="filter-btn" data-category="Patties">Patties</button>
+        </div>
 
-<h1>Hemu Ji Chilla Chat</h1>
+        <div id="menuContainer"></div>
+    </section>
 
-<p>Serving authentic taste of Gwalior since 33+ years ❤️</p>
+    <!-- CONTACT -->
+    <section class="contact-section">
+        <h2 class="section-title">Visit Us</h2>
 
-<div class="hero-stats">
-<span>⭐ 4.8 Rating</span>
-<span>🍽 50K+ Happy Customers</span>
-<span>🏆 2 Branches</span>
-</div>
+        <div class="contact-info">
+            <div class="contact-card">
+                <h3>📍 Madhav Ganj</h3>
+                <p>Madhav Ganj Chauraha, Gwalior</p>
+                <p>🕒 12:00 PM - 11:00 PM</p>
+                <p>📞 +91 9876543210</p>
+            </div>
 
-<div class="hero-buttons">
-<button class="primary-btn" onclick="scrollToMenu()">View Menu</button>
-<button class="secondary-btn" onclick="orderOnWhatsApp()">Order Now</button>
-</div>
+            <div class="contact-card">
+                <h3>📍 Nai Sadak</h3>
+                <p>Phalka Bazar, Gwalior</p>
+                <p>🕒 2:00 PM - 10:30 PM</p>
+                <p>📞 +91 9876543211</p>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h3>Hemu Ji Chilla Chat Bhandar</h3>
+        <p>Serving since 33+ years ❤️</p>
+        <p>© 2026 All Rights Reserved</p>
+    </footer>
 
-</section>
-
-<!-- ================= SEARCH ================= -->
-<div class="search-container">
-
-<input 
-type="text" 
-id="searchInput" 
-placeholder="🔍 Search your favorite food..."
->
-
-</div>
-
-<!-- ================= MENU ================= -->
-<section id="menuSection">
-
-<h2 class="section-title">Our Special Menu</h2>
-
-<div class="category-filter">
-
-<button class="filter-btn active" data-category="all">All</button>
-<button class="filter-btn" data-category="Gol Gappe">Gol Gappe</button>
-<button class="filter-btn" data-category="Cheela">Cheela</button>
-<button class="filter-btn" data-category="Sev Puri Chaat">Sev Puri</button>
-<button class="filter-btn" data-category="Sev Papdi Chaat">Sev Papdi</button>
-<button class="filter-btn" data-category="Karela">Karela</button>
-<button class="filter-btn" data-category="Pizza">Pizza</button>
-<button class="filter-btn" data-category="Pasta">Pasta</button>
-<button class="filter-btn" data-category="Sandwiches">Sandwiches</button>
-<button class="filter-btn" data-category="Burgers">Burgers</button>
-<button class="filter-btn" data-category="Maggi">Maggi</button>
-<button class="filter-btn" data-category="Patties">Patties</button>
-
-</div>
-
-<div id="menuContainer"></div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="contact-section">
-
-<h2 class="section-title">Visit Us</h2>
-
-<div class="contact-info">
-
-<div class="contact-card">
-<h3>📍 Madhav Ganj Branch</h3>
-<p>Madhav Ganj Chauraha, Gwalior</p>
-<p>🕒 12:00 PM - 11:00 PM</p>
-<p>📞 +91 9876543210</p>
-</div>
-
-<div class="contact-card">
-<h3>📍 Nai Sadak Branch</h3>
-<p>Phalka Bazar, Gwalior</p>
-<p>🕒 2:00 PM - 10:30 PM</p>
-<p>📞 +91 9876543211</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-
-<h3>Hemu Ji Chilla Chat Bhandar</h3>
-
-<p>Serving happiness since 33+ years ❤️</p>
-
-<p>© 2026 Hemu Ji Chilla Chat | Made with ❤️ in Gwalior</p>
-
-</footer>
-
-<!-- ================= JS ================= -->
-<script src="script.js"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
 
 </body>
 </html>
